@@ -80,6 +80,14 @@ class CalculatorVC: UIViewController {
         ProcessOperation(operation: currentOperation);
     }
     
+    @IBAction func ClearPressed(sender: Any) {
+        runningNumber = "";
+        leftValueStr = "";
+        rightValueStr = "";
+        resultLbl.text = "";
+        currentOperation = Operator.Empty;
+    }
+    
     func ProcessOperation(operation: Operator) {
         if(currentOperation != Operator.Empty) { // If operator is not empty anymore, When user presses an operation
             if runningNumber != "" { // Also, if user has also pressed a number
